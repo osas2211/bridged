@@ -3,6 +3,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import React from "react"
 import { Button } from "./Button"
+import { ConnectEVMWallet } from "./wallets/evm/ConnectEVMWallet"
 
 const links = [
   { pathname: "Bridge", route: "/bridge" },
@@ -30,7 +31,7 @@ export const Header = () => {
                 {link.pathname}
               </Link>
             ))}
-            <Button>Connect wallet</Button>
+            <ConnectEVMWallet />
           </div>
         </div>
       </div>

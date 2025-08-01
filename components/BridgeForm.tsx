@@ -86,7 +86,7 @@ export const BridgeForm = () => {
                 </div>
                 <div className="p-4 bg-sienna/20 hover:bg-sienna/30 flex flex-col justify-center">
                   <p className="text-sm">Network</p>
-                  <p className="text-xl font-semibold leading-5">Stellar</p>
+                  <p className="text-xl font-semibold leading-5">Tron</p>
                 </div>
               </div>
 

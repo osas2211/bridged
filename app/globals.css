@@ -38,3 +38,7 @@ body {
   /* background: var(--papaya-whip); */
   color: var(--sienna);
 }
+
+.tw-connected-wallet__address {
+  color: var(--sienna) !important;
+}
