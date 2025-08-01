@@ -2,8 +2,6 @@
 
 import type React from "react"
 
-import { motion } from "framer-motion"
-
 import { ThirdwebProvider } from "thirdweb/react"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { Toaster } from "react-hot-toast"
@@ -37,16 +35,7 @@ export default function InAppLayout({ children }: AppLayoutProps) {
         <ThirdwebProvider>
           <WalletProvider onError={onError}>
             <WalletModalProvider>
-              <main>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className=""
-                >
-                  {children}
-                </motion.div>
-              </main>
+              <main>{children}</main>
             </WalletModalProvider>
           </WalletProvider>
 

@@ -17,6 +17,7 @@ import { env_vars } from "@/lib/env_vars"
 import { useWallet as useTronWallet } from "@tronweb3/tronwallet-adapter-react-hooks"
 import { useWalletModal as useTronWalletModal } from "@tronweb3/tronwallet-adapter-react-ui"
 import { tronWeb } from "@/lib/tron_client"
+import gsap from "gsap"
 
 const nativeTokens: Record<
   "ETH" | "TRON",
@@ -34,7 +35,7 @@ const nativeTokens: Record<
   TRON: {
     symbol: "TRX",
     name: "TRON",
-    icon: "/tokens/stellar.png",
+    icon: "/tokens/tron.png",
   },
 }
 
@@ -115,13 +116,17 @@ export const BridgeForm = () => {
     let fromPrevAmount = fromAmount
     setFromAmount(toAmount)
     setToAmount(fromPrevAmount)
+
+    gsap.fromTo(".fromNetwork", { y: 200, rotate: 180 }, { y: 0, rotate: 0 })
+    gsap.fromTo(".toNetwork", { y: -200, rotate: -180 }, { y: 0, rotate: 0 })
+    gsap.fromTo(".switch-icon", { rotate: -180 }, { rotate: 0 })
   }
 
   return (
     <div className="max-w-[440px] md:w-[440px] mt-[4rem] font-sans">
       <div className="w-full">
         <p className="font-semibold mb-4 md:text-lg">Bridge tokens</p>
-        <div className="w-full">
+        <div className="w-full fromNetwork">
           <div className="">
             <div className="flex items-center justify-between text-sm font-sans mb-[2px]">
               <p className="truncate">
@@ -212,15 +217,15 @@ export const BridgeForm = () => {
         </div>
 
         {/* DIVIDERRRRRRRRRRRR */}
-        <div className="my-7 flex items-center justify-center">
+        <div className="my-7 flex items-center justify-center relative z-[100]">
           <ArrowDownUp
-            className="cursor-pointer"
+            className="cursor-pointer switch-icon"
             onClick={switchNetworkPosition}
           />
         </div>
         {/* DIVIDERRRRRRRRRRRR */}
 
-        <div className="w-full">
+        <div className="w-full toNetwork">
           <div className="">
             <div className="flex items-center justify-between text-sm font-sans mb-[2px]">
               <p>
