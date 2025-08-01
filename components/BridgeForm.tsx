@@ -1,11 +1,34 @@
 "use client"
 import { ArrowDownUp, ChevronDown, Eye } from "lucide-react"
 import Image from "next/image"
-import React from "react"
+import React, { useState } from "react"
 import { Button } from "./Button"
 import { Switch, Button as AntButton } from "antd"
+import {
+  useActiveAccount,
+  useDisconnect,
+  useActiveWallet,
+  useConnectModal,
+  useWalletBalance,
+} from "thirdweb/react"
+import { truncateText } from "@/utils/truncateText"
+import { thirdweb_client } from "@/lib/thirdweb_client"
+import { env_vars } from "@/lib/env_vars"
 
 export const BridgeForm = () => {
+  const account = useActiveAccount()
+  const { disconnect: disconnectEvmWallet } = useDisconnect()
+  const { connect: connectEvmWallet } = useConnectModal()
+  const wallet = useActiveWallet()
+  const evmTokenBalance = useWalletBalance({
+    client: thirdweb_client,
+    chain: {
+      rpc: env_vars.SEPOLIA_RPC,
+      id: env_vars.SEPOLIA_CHAIN_ID,
+    },
+    address: account?.address!,
+  })
+  const [fromAmount, setFromAmount] = useState(0)
   return (
     <div className="max-w-[440px] md:w-[440px] mt-[4rem] font-sans">
       <div className="w-full">
@@ -13,8 +36,24 @@ export const BridgeForm = () => {
         <div className="w-full">
           <div className="">
             <div className="flex items-center justify-between text-sm font-sans mb-[2px]">
-              <p>0x155...5c92C</p>
-              <button className="cursor-pointer">Disconnect</button>
+              <p className="truncate">
+                {truncateText(account?.address, 5, true)}
+              </p>
+              {wallet ? (
+                <button
+                  className="cursor-pointer"
+                  onClick={() => disconnectEvmWallet(wallet!)}
+                >
+                  Disconnect
+                </button>
+              ) : (
+                <button
+                  className="cursor-pointer"
+                  onClick={() => connectEvmWallet({ client: thirdweb_client })}
+                >
+                  Connect Wallet
+                </button>
+              )}
             </div>
             <div className="border-1 border-sienna/30">
               <div className="h-[80px] grid grid-cols-3 gap-x-[2px]">
@@ -41,18 +80,39 @@ export const BridgeForm = () => {
 
               <div className="h-[65px] flex items-center justify-between px-4">
                 <div className="w-[70%] h-full flex items-center gap-2">
-                  <button className="text-sm min-w-[50px] h-[30px] bg-sienna/10 text-sienna font-semibold cursor-pointer">
+                  <button
+                    className="text-sm min-w-[50px] h-[30px] bg-sienna/10 text-sienna font-semibold cursor-pointer"
+                    onClick={() => {
+                      setFromAmount(
+                        Number(
+                          Number(
+                            evmTokenBalance?.data?.displayValue || 0
+                          ).toPrecision(6)
+                        )
+                      )
+                    }}
+                  >
                     Max
                   </button>
                   <input
                     className="w-[100%] outline-0 text-2xl"
                     placeholder="0"
                     type="number"
+                    value={fromAmount}
+                    onChange={(e) => {
+                      setFromAmount(
+                        Number(Number(e.target.value).toPrecision(4))
+                      )
+                    }}
                   />
                 </div>
                 <div className="text-end text-sm">
                   <p>Balance</p>
-                  <p className="font-semibold">0</p>
+                  <p className="font-semibold">
+                    {Number(
+                      evmTokenBalance?.data?.displayValue || 0
+                    ).toPrecision(4)}
+                  </p>
                 </div>
               </div>
             </div>
