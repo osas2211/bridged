@@ -1,7 +1,7 @@
 "use client"
 import { ArrowDownUp, ChevronDown, Eye } from "lucide-react"
 import Image from "next/image"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Button } from "./Button"
 import { Switch, Button as AntButton } from "antd"
 import {
@@ -14,6 +14,9 @@ import {
 import { truncateText } from "@/utils/truncateText"
 import { thirdweb_client } from "@/lib/thirdweb_client"
 import { env_vars } from "@/lib/env_vars"
+import { useWallet as useTronWallet } from "@tronweb3/tronwallet-adapter-react-hooks"
+import { useWalletModal as useTronWalletModal } from "@tronweb3/tronwallet-adapter-react-ui"
+import { tronWeb } from "@/lib/tron_client"
 
 export const BridgeForm = () => {
   const account = useActiveAccount()
@@ -28,7 +31,29 @@ export const BridgeForm = () => {
     },
     address: account?.address!,
   })
-  const [fromAmount, setFromAmount] = useState(0)
+  const [fromAmount, setFromAmount] = useState("")
+  const {
+    connected: tronIsConnected,
+    connect: connectTronWallet,
+    address: tronAddress,
+    connecting: isConnectingTronWallet,
+    disconnect: disconnectTronWallet,
+    wallet: tronWallet,
+  } = useTronWallet()
+  console.log(tronWallet)
+  const tronWalletModal = useTronWalletModal()
+  const [tronBalance, setTronBalance] = useState<number | null>(null)
+
+  useEffect(() => {
+    if (tronIsConnected && tronAddress) {
+      tronWeb.trx
+        .getBalance(tronAddress)
+        .then((sun) => setTronBalance(sun / 1e6))
+        .catch(() => setTronBalance(null))
+    } else {
+      setTronBalance(null)
+    }
+  }, [tronIsConnected, tronAddress])
   return (
     <div className="max-w-[440px] md:w-[440px] mt-[4rem] font-sans">
       <div className="w-full">
@@ -51,7 +76,7 @@ export const BridgeForm = () => {
                   className="cursor-pointer"
                   onClick={() => connectEvmWallet({ client: thirdweb_client })}
                 >
-                  Connect Wallet
+                  Connect wallet
                 </button>
               )}
             </div>
@@ -84,10 +109,8 @@ export const BridgeForm = () => {
                     className="text-sm min-w-[50px] h-[30px] bg-sienna/10 text-sienna font-semibold cursor-pointer"
                     onClick={() => {
                       setFromAmount(
-                        Number(
-                          Number(
-                            evmTokenBalance?.data?.displayValue || 0
-                          ).toPrecision(6)
+                        Number(evmTokenBalance?.data?.displayValue).toPrecision(
+                          6
                         )
                       )
                     }}
@@ -100,9 +123,7 @@ export const BridgeForm = () => {
                     type="number"
                     value={fromAmount}
                     onChange={(e) => {
-                      setFromAmount(
-                        Number(Number(e.target.value).toPrecision(4))
-                      )
+                      setFromAmount(e.target.value)
                     }}
                   />
                 </div>
@@ -124,8 +145,22 @@ export const BridgeForm = () => {
         <div className="w-full">
           <div className="">
             <div className="flex items-center justify-between text-sm font-sans mb-[2px]">
-              <p>0x155...5c92C</p>
-              <button className="cursor-pointer">Disconnect</button>
+              <p>{truncateText(tronAddress || "", 5, true)}</p>
+              {tronIsConnected ? (
+                <button
+                  className="cursor-pointer"
+                  onClick={disconnectTronWallet}
+                >
+                  Disconnect
+                </button>
+              ) : (
+                <button
+                  className="cursor-pointer"
+                  onClick={() => tronWalletModal.setVisible(true)}
+                >
+                  Connect wallet
+                </button>
+              )}
             </div>
             <div className="border-1 border-sienna/30">
               <div className="h-[80px] grid grid-cols-3 gap-x-[2px]">
@@ -163,7 +198,7 @@ export const BridgeForm = () => {
                 </div>
                 <div className="text-end text-sm">
                   <p>Balance</p>
-                  <p className="font-semibold">0</p>
+                  <p className="font-semibold">{tronBalance}</p>
                 </div>
               </div>
             </div>

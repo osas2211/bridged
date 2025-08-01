@@ -12,6 +12,10 @@
     "@ant-design/nextjs-registry": "^1.1.0",
     "@gsap/react": "^2.1.2",
     "@tanstack/react-query": "^5.84.1",
+    "@tronweb3/tronwallet-abstract-adapter": "^1.1.9",
+    "@tronweb3/tronwallet-adapter-react-hooks": "^1.1.10",
+    "@tronweb3/tronwallet-adapter-react-ui": "^1.1.11",
+    "@tronweb3/tronwallet-adapters": "^1.2.12",
     "antd": "^5.26.6",
     "framer-motion": "^12.23.12",
     "gsap": "^3.13.0",
@@ -19,7 +23,9 @@
     "next": "15.4.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "thirdweb": "^5.105.26"
+    "react-hot-toast": "^2.5.2",
+    "thirdweb": "^5.105.26",
+    "tronweb": "^6.0.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
