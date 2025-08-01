@@ -18,7 +18,30 @@ import { useWallet as useTronWallet } from "@tronweb3/tronwallet-adapter-react-h
 import { useWalletModal as useTronWalletModal } from "@tronweb3/tronwallet-adapter-react-ui"
 import { tronWeb } from "@/lib/tron_client"
 
+const nativeTokens: Record<
+  "ETH" | "TRON",
+  {
+    symbol: string
+    name: string
+    icon: string
+  }
+> = {
+  ETH: {
+    symbol: "ETH",
+    name: "Ethereum",
+    icon: "/tokens/eth.png",
+  },
+  TRON: {
+    symbol: "TRX",
+    name: "TRON",
+    icon: "/tokens/stellar.png",
+  },
+}
+
 export const BridgeForm = () => {
+  const [fromNetwork, setFromNetWork] = useState<"ETH" | "TRON">("ETH")
+  const [toNetwork, setToNetWork] = useState<"ETH" | "TRON">("TRON")
+
   const account = useActiveAccount()
   const { disconnect: disconnectEvmWallet } = useDisconnect()
   const { connect: connectEvmWallet } = useConnectModal()
@@ -32,6 +55,8 @@ export const BridgeForm = () => {
     address: account?.address!,
   })
   const [fromAmount, setFromAmount] = useState("")
+  const [toAmount, setToAmount] = useState("")
+
   const {
     connected: tronIsConnected,
     connect: connectTronWallet,
@@ -42,7 +67,15 @@ export const BridgeForm = () => {
   } = useTronWallet()
   console.log(tronWallet)
   const tronWalletModal = useTronWalletModal()
-  const [tronBalance, setTronBalance] = useState<number | null>(null)
+  const [tronBalance, setTronBalance] = useState<number | null>(0)
+
+  const connectFromWallet = () => {
+    if (fromNetwork === "ETH") {
+      connectEvmWallet({ client: thirdweb_client })
+    } else {
+      connectTronWallet()
+    }
+  }
 
   useEffect(() => {
     if (tronIsConnected && tronAddress) {
@@ -54,6 +87,36 @@ export const BridgeForm = () => {
       setTronBalance(null)
     }
   }, [tronIsConnected, tronAddress])
+
+  const fromIsConnected =
+    fromNetwork === "ETH"
+      ? Boolean(wallet)
+      : fromNetwork === "TRON"
+      ? tronIsConnected
+      : false
+  const toIsConnected =
+    toNetwork === "ETH"
+      ? Boolean(wallet)
+      : toNetwork === "TRON"
+      ? tronIsConnected
+      : false
+  const fromBalance =
+    fromNetwork === "ETH" ? evmTokenBalance?.data?.displayValue! : tronBalance
+  const toBalance =
+    toNetwork === "ETH" ? evmTokenBalance?.data?.displayValue! : tronBalance
+  const switchNetworkPosition = () => {
+    if (fromNetwork === "ETH") {
+      setFromNetWork("TRON")
+      setToNetWork("ETH")
+    } else {
+      setToNetWork("TRON")
+      setFromNetWork("ETH")
+    }
+    let fromPrevAmount = fromAmount
+    setFromAmount(toAmount)
+    setToAmount(fromPrevAmount)
+  }
+
   return (
     <div className="max-w-[440px] md:w-[440px] mt-[4rem] font-sans">
       <div className="w-full">
@@ -62,19 +125,29 @@ export const BridgeForm = () => {
           <div className="">
             <div className="flex items-center justify-between text-sm font-sans mb-[2px]">
               <p className="truncate">
-                {truncateText(account?.address, 5, true)}
+                {fromNetwork === "ETH"
+                  ? truncateText(account?.address, 5, true)
+                  : truncateText(tronAddress || "", 5, true)}
               </p>
-              {wallet ? (
+              {fromIsConnected ? (
                 <button
                   className="cursor-pointer"
-                  onClick={() => disconnectEvmWallet(wallet!)}
+                  onClick={() => {
+                    fromNetwork === "ETH"
+                      ? disconnectEvmWallet(wallet!)
+                      : disconnectTronWallet()
+                  }}
                 >
                   Disconnect
                 </button>
               ) : (
                 <button
                   className="cursor-pointer"
-                  onClick={() => connectEvmWallet({ client: thirdweb_client })}
+                  onClick={() => {
+                    fromNetwork === "ETH"
+                      ? connectEvmWallet({ client: thirdweb_client })
+                      : tronWalletModal.setVisible(true)
+                  }}
                 >
                   Connect wallet
                 </button>
@@ -84,7 +157,7 @@ export const BridgeForm = () => {
               <div className="h-[80px] grid grid-cols-3 gap-x-[2px]">
                 <div className="col-span-2 p-4 bg-sienna/20 flex gap-2 items-center">
                   <Image
-                    src={"/tokens/eth.png"}
+                    src={nativeTokens[fromNetwork].icon}
                     height={50}
                     width={50}
                     alt=""
@@ -92,14 +165,18 @@ export const BridgeForm = () => {
                   <div>
                     <p className="text-sm">Token</p>
                     <div className="flex items-center gap-1">
-                      <p className="text-xl font-semibold leading-5">ETH</p>
+                      <p className="text-xl font-semibold leading-5">
+                        {nativeTokens[fromNetwork].symbol}
+                      </p>
                       <ChevronDown />
                     </div>
                   </div>
                 </div>
                 <div className="p-4 bg-sienna/20 hover:bg-sienna/30 flex flex-col justify-center">
                   <p className="text-sm">Network</p>
-                  <p className="text-xl font-semibold leading-5">Ethereum</p>
+                  <p className="text-xl font-semibold leading-5">
+                    {nativeTokens[fromNetwork].name}
+                  </p>
                 </div>
               </div>
 
@@ -108,11 +185,7 @@ export const BridgeForm = () => {
                   <button
                     className="text-sm min-w-[50px] h-[30px] bg-sienna/10 text-sienna font-semibold cursor-pointer"
                     onClick={() => {
-                      setFromAmount(
-                        Number(evmTokenBalance?.data?.displayValue).toPrecision(
-                          6
-                        )
-                      )
+                      setFromAmount(Number(fromBalance).toPrecision(6))
                     }}
                   >
                     Max
@@ -130,33 +203,52 @@ export const BridgeForm = () => {
                 <div className="text-end text-sm">
                   <p>Balance</p>
                   <p className="font-semibold">
-                    {Number(
-                      evmTokenBalance?.data?.displayValue || 0
-                    ).toPrecision(4)}
+                    {Number(fromBalance || 0).toPrecision(4)}
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        {/* DIVIDERRRRRRRRRRRR */}
         <div className="my-7 flex items-center justify-center">
-          <ArrowDownUp />
+          <ArrowDownUp
+            className="cursor-pointer"
+            onClick={switchNetworkPosition}
+          />
         </div>
+        {/* DIVIDERRRRRRRRRRRR */}
+
         <div className="w-full">
           <div className="">
             <div className="flex items-center justify-between text-sm font-sans mb-[2px]">
-              <p>{truncateText(tronAddress || "", 5, true)}</p>
-              {tronIsConnected ? (
+              <p>
+                {toNetwork === "ETH"
+                  ? truncateText(account?.address, 5, true)
+                  : truncateText(tronAddress || "", 5, true)}
+              </p>
+              {toIsConnected ? (
                 <button
                   className="cursor-pointer"
-                  onClick={disconnectTronWallet}
+                  onClick={() => {
+                    {
+                      toNetwork === "ETH"
+                        ? disconnectEvmWallet(wallet!)
+                        : disconnectTronWallet()
+                    }
+                  }}
                 >
                   Disconnect
                 </button>
               ) : (
                 <button
                   className="cursor-pointer"
-                  onClick={() => tronWalletModal.setVisible(true)}
+                  onClick={() => {
+                    toNetwork === "ETH"
+                      ? connectEvmWallet({ client: thirdweb_client })
+                      : tronWalletModal.setVisible(true)
+                  }}
                 >
                   Connect wallet
                 </button>
@@ -166,7 +258,7 @@ export const BridgeForm = () => {
               <div className="h-[80px] grid grid-cols-3 gap-x-[2px]">
                 <div className="col-span-2 p-4 bg-sienna/20 flex gap-2 items-center cursor-pointer hover:bg-sienna/30">
                   <Image
-                    src={"/tokens/stellar.png"}
+                    src={nativeTokens[toNetwork].icon}
                     height={50}
                     width={50}
                     alt=""
@@ -174,31 +266,36 @@ export const BridgeForm = () => {
                   <div>
                     <p className="text-sm">Token</p>
                     <div className="flex items-center gap-1">
-                      <p className="text-xl font-semibold leading-5">XLM</p>
+                      <p className="text-xl font-semibold leading-5">
+                        {nativeTokens[toNetwork].symbol}
+                      </p>
                       <ChevronDown />
                     </div>
                   </div>
                 </div>
                 <div className="p-4 bg-sienna/20 hover:bg-sienna/30 flex flex-col justify-center">
                   <p className="text-sm">Network</p>
-                  <p className="text-xl font-semibold leading-5">Tron</p>
+                  <p className="text-xl font-semibold leading-5">
+                    {nativeTokens[toNetwork].name}
+                  </p>
                 </div>
               </div>
 
               <div className="h-[65px] flex items-center justify-between px-4">
                 <div className="w-[70%] h-full flex items-center gap-2">
-                  {/* <button className="text-sm min-w-[50px] h-[30px] bg-sienna/10 text-sienna font-semibold cursor-pointer">
-                    Max
-                  </button> */}
                   <input
                     className="w-[100%] outline-0 text-2xl"
                     placeholder="0"
                     type="number"
+                    disabled
+                    value={toAmount}
                   />
                 </div>
                 <div className="text-end text-sm">
                   <p>Balance</p>
-                  <p className="font-semibold">{tronBalance}</p>
+                  <p className="font-semibold">
+                    {Number(toBalance || 0).toPrecision(4)}
+                  </p>
                 </div>
               </div>
             </div>
@@ -214,7 +311,13 @@ export const BridgeForm = () => {
           </div>
         </div>
         <div className="my-4">
-          <Button className="w-full h-[50px]">Connect wallet</Button>
+          {fromIsConnected ? (
+            <Button className="w-full h-[50px]">Swap Token</Button>
+          ) : (
+            <Button className="w-full h-[50px]" onClick={connectFromWallet}>
+              Connect wallet
+            </Button>
+          )}
         </div>
         <AntButton
           className="!text-sienna !bg-sienna/10 hover:!bg-sienna/70 hover:!text-papaya-whip"
