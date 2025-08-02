@@ -13,11 +13,7 @@ const config = {
         settings: { optimizer: { enabled: true, runs: 200 } },
       },
       {
-        version: "0.6.6", // Uniswap V2 Periphery (Router02, WETH9)
-        settings: { optimizer: { enabled: true, runs: 200 } },
-      },
-      {
-        version: "0.5.16", // Uniswap V2 Core (Factory, Pair, libraries)
+        version: "0.8.23",
         settings: { optimizer: { enabled: true, runs: 200 } },
       },
     ],
