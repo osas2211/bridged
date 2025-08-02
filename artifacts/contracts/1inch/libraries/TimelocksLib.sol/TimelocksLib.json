@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "TimelocksLib",
+  "sourceName": "contracts/1inch/libraries/TimelocksLib.sol",
+  "abi": [],
+  "bytecode": "0x60808060405234601757603a9081601d823930815050f35b600080fdfe600080fdfea2646970667358221220ebfee2f27248b3c5cac48d7ced586dd1b07e54c068847bf035495bd0cab1b7ab64736f6c63430008170033",
+  "deployedBytecode": "0x600080fdfea2646970667358221220ebfee2f27248b3c5cac48d7ced586dd1b07e54c068847bf035495bd0cab1b7ab64736f6c63430008170033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

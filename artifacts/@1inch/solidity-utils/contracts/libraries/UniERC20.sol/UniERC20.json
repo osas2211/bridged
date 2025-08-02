@@ -1,0 +1,41 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "UniERC20",
+  "sourceName": "@1inch/solidity-utils/contracts/libraries/UniERC20.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "ApproveCalledOnETH",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "ETHTransferFailed",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "FromIsNotSender",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InsufficientBalance",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NotEnoughValue",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "ToIsNotThis",
+      "type": "error"
+    }
+  ],
+  "bytecode": "0x60808060405234601757603a9081601d823930815050f35b600080fdfe600080fdfea2646970667358221220f4d06bbac4db141c2742c9bbfe9924cec65e98c12d3a54bfd92231083438e41764736f6c63430008170033",
+  "deployedBytecode": "0x600080fdfea2646970667358221220f4d06bbac4db141c2742c9bbfe9924cec65e98c12d3a54bfd92231083438e41764736f6c63430008170033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

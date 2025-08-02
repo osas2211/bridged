@@ -2,9 +2,9 @@
 
 pragma solidity 0.8.23;
 
-import {IERC20} from "openzeppelin-contracts/contracts/token/ERC20/IERC20.sol";
+import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-import {SimpleSettlement} from "limit-order-settlement/contracts/SimpleSettlement.sol";
+import {SimpleSettlement} from "@1inch/limit-order-settlement/contracts/SimpleSettlement.sol";
 
 import {ProxyHashLib} from "./libraries/ProxyHashLib.sol";
 

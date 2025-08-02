@@ -28,7 +28,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "hardhat.config.ts",
-    "scripts/evm/deploy_predicate.js"
+    "scripts/evm/deploy_predicate.js",
+    "scripts/tron/deploy-trc20-tokens.js"
   ],
   "exclude": ["node_modules"]
 }

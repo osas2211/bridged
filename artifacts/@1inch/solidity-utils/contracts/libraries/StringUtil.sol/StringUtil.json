@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "StringUtil",
+  "sourceName": "@1inch/solidity-utils/contracts/libraries/StringUtil.sol",
+  "abi": [],
+  "bytecode": "0x60808060405234601757603a9081601d823930815050f35b600080fdfe600080fdfea26469706673582212209e196d914a6dc275fdee822a3495de3de0af8f200d065090e638983f0154d2a664736f6c63430008170033",
+  "deployedBytecode": "0x600080fdfea26469706673582212209e196d914a6dc275fdee822a3495de3de0af8f200d065090e638983f0154d2a664736f6c63430008170033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

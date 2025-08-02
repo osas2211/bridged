@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "TakerTraitsLib",
+  "sourceName": "@1inch/limit-order-protocol-contract/contracts/libraries/TakerTraitsLib.sol",
+  "abi": [],
+  "bytecode": "0x60808060405234601757603a9081601d823930815050f35b600080fdfe600080fdfea26469706673582212200ce6122b07d3ef53b49c98d5a7321f2291b1e284e7a74a046152226426cbbfb464736f6c63430008170033",
+  "deployedBytecode": "0x600080fdfea26469706673582212200ce6122b07d3ef53b49c98d5a7321f2291b1e284e7a74a046152226426cbbfb464736f6c63430008170033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

@@ -6,12 +6,13 @@
       "contentHash": "ff0eacb5d2a7bdcfa25d7745bac2dd2c",
       "sourceName": "contracts/evm/PrimagePredicate.sol",
       "solcConfig": {
-        "version": "0.8.20",
+        "version": "0.8.23",
         "settings": {
           "optimizer": {
             "enabled": true,
             "runs": 200
           },
+          "viaIR": true,
           "evmVersion": "paris",
           "outputSelection": {
             "*": {
@@ -37,53 +38,18 @@
         "PreimagePredicate"
       ]
     },
-    "/home/frank/code_base/bridged/contracts/evm/ETH_HTLC.sol": {
-      "lastModificationDate": 1754139632405,
-      "contentHash": "e0a366d48c59b88a59b7dad3448157ec",
-      "sourceName": "contracts/evm/ETH_HTLC.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "paris",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "ETH_HTLC"
-      ]
-    },
     "/home/frank/code_base/bridged/contracts/tron/TRX_HTLC.sol": {
       "lastModificationDate": 1754139776278,
       "contentHash": "70ab00f4f7dbd45b9a7342a81d71d1e5",
       "sourceName": "contracts/tron/TRX_HTLC.sol",
       "solcConfig": {
-        "version": "0.8.20",
+        "version": "0.8.23",
         "settings": {
           "optimizer": {
             "enabled": true,
             "runs": 200
           },
+          "viaIR": true,
           "evmVersion": "paris",
           "outputSelection": {
             "*": {
@@ -114,12 +80,13 @@
       "contentHash": "22b1b04751d65713f38388c3e77314c1",
       "sourceName": "contracts/evm/TestERC20.sol",
       "solcConfig": {
-        "version": "0.8.20",
+        "version": "0.8.23",
         "settings": {
           "optimizer": {
             "enabled": true,
             "runs": 200
           },
+          "viaIR": true,
           "evmVersion": "paris",
           "outputSelection": {
             "*": {
@@ -150,12 +117,13 @@
       "contentHash": "734a57ab8e52f0f7441f61d39b881666",
       "sourceName": "contracts/tron/TestTRC20.sol",
       "solcConfig": {
-        "version": "0.8.20",
+        "version": "0.8.23",
         "settings": {
           "optimizer": {
             "enabled": true,
             "runs": 200
           },
+          "viaIR": true,
           "evmVersion": "paris",
           "outputSelection": {
             "*": {
@@ -179,6 +147,2115 @@
       ],
       "artifacts": [
         "TestTRC20"
+      ]
+    },
+    "/home/frank/code_base/bridged/contracts/1inch/BaseEscrow.sol": {
+      "lastModificationDate": 1754167290261,
+      "contentHash": "a5dd9f4dbaed1de328a106b2af1d6058",
+      "sourceName": "contracts/1inch/BaseEscrow.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@1inch/solidity-utils/contracts/libraries/AddressLib.sol",
+        "@1inch/solidity-utils/contracts/libraries/SafeERC20.sol",
+        "./libraries/ImmutablesLib.sol",
+        "./libraries/TimelocksLib.sol",
+        "./interfaces/IBaseEscrow.sol"
+      ],
+      "versionPragmas": [
+        "0.8.23"
+      ],
+      "artifacts": [
+        "BaseEscrow"
+      ]
+    },
+    "/home/frank/code_base/bridged/contracts/1inch/libraries/ImmutablesLib.sol": {
+      "lastModificationDate": 1754165415071,
+      "contentHash": "d1c2af19830c5e48a360e0b0f4fcd8be",
+      "sourceName": "contracts/1inch/libraries/ImmutablesLib.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IBaseEscrow.sol",
+        "../interfaces/IBaseEscrow.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ImmutablesLib"
+      ]
+    },
+    "/home/frank/code_base/bridged/contracts/1inch/libraries/TimelocksLib.sol": {
+      "lastModificationDate": 1754165415071,
+      "contentHash": "eee11508fc177a8ffaf1fe15acf4218a",
+      "sourceName": "contracts/1inch/libraries/TimelocksLib.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "TimelocksLib"
+      ]
+    },
+    "/home/frank/code_base/bridged/contracts/1inch/interfaces/IBaseEscrow.sol": {
+      "lastModificationDate": 1754167290351,
+      "contentHash": "7755c6ec238fef79f2c0c45d6561561b",
+      "sourceName": "contracts/1inch/interfaces/IBaseEscrow.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@1inch/solidity-utils/contracts/libraries/AddressLib.sol",
+        "../libraries/TimelocksLib.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IBaseEscrow"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@1inch/solidity-utils/contracts/libraries/AddressLib.sol": {
+      "lastModificationDate": 1754167092188,
+      "contentHash": "31b9eabeb8fd63c6ac80be837f606241",
+      "sourceName": "@1inch/solidity-utils/contracts/libraries/AddressLib.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AddressLib"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1754165981985,
+      "contentHash": "9261adf6457863de3e9892f51317ec89",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.16"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@1inch/solidity-utils/contracts/libraries/SafeERC20.sol": {
+      "lastModificationDate": 1754167092298,
+      "contentHash": "a100e24842d4c3eb10c45809aa34755f",
+      "sourceName": "@1inch/solidity-utils/contracts/libraries/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol",
+        "../interfaces/IDaiLikePermit.sol",
+        "../interfaces/IPermit2.sol",
+        "../interfaces/IERC7597Permit.sol",
+        "../interfaces/IWETH.sol",
+        "../libraries/RevertReasonForwarder.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@1inch/solidity-utils/contracts/interfaces/IDaiLikePermit.sol": {
+      "lastModificationDate": 1754167092088,
+      "contentHash": "19367cd9f27b1323ad40f0b0da5d4339",
+      "sourceName": "@1inch/solidity-utils/contracts/interfaces/IDaiLikePermit.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IDaiLikePermit"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@1inch/solidity-utils/contracts/interfaces/IWETH.sol": {
+      "lastModificationDate": 1754167092143,
+      "contentHash": "ad73cdd90dc807d1162e48aceb87df43",
+      "sourceName": "@1inch/solidity-utils/contracts/interfaces/IWETH.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IWETH"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@1inch/solidity-utils/contracts/interfaces/IERC7597Permit.sol": {
+      "lastModificationDate": 1754167092115,
+      "contentHash": "be4c71fd9ec56c2ffddfa24a51600265",
+      "sourceName": "@1inch/solidity-utils/contracts/interfaces/IERC7597Permit.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC7597Permit"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@1inch/solidity-utils/contracts/interfaces/IPermit2.sol": {
+      "lastModificationDate": 1754167092124,
+      "contentHash": "1cd998439b9963032e925757b4979414",
+      "sourceName": "@1inch/solidity-utils/contracts/interfaces/IPermit2.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IPermit2"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@1inch/solidity-utils/contracts/libraries/RevertReasonForwarder.sol": {
+      "lastModificationDate": 1754167092262,
+      "contentHash": "10113d3a51fa92a6118b05ea66525677",
+      "sourceName": "@1inch/solidity-utils/contracts/libraries/RevertReasonForwarder.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "RevertReasonForwarder"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol": {
+      "lastModificationDate": 1754165981985,
+      "contentHash": "b01905745d47df90c7bd5dd70d498cb7",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.16"
+      ],
+      "artifacts": [
+        "IERC20Permit"
+      ]
+    },
+    "/home/frank/code_base/bridged/contracts/1inch/EscrowSrc.sol": {
+      "lastModificationDate": 1754167290231,
+      "contentHash": "3b828cda1ab6c0cecd111ba1a0d154ef",
+      "sourceName": "contracts/1inch/EscrowSrc.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@1inch/solidity-utils/contracts/libraries/SafeERC20.sol",
+        "@1inch/solidity-utils/contracts/libraries/AddressLib.sol",
+        "./libraries/TimelocksLib.sol",
+        "./libraries/ImmutablesLib.sol",
+        "./interfaces/IEscrowSrc.sol",
+        "./BaseEscrow.sol",
+        "./Escrow.sol"
+      ],
+      "versionPragmas": [
+        "0.8.23"
+      ],
+      "artifacts": [
+        "EscrowSrc"
+      ]
+    },
+    "/home/frank/code_base/bridged/contracts/1inch/interfaces/IEscrowSrc.sol": {
+      "lastModificationDate": 1754165414944,
+      "contentHash": "8a4fee72e13880c4aef06a6e54cd0dad",
+      "sourceName": "contracts/1inch/interfaces/IEscrowSrc.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IEscrow.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IEscrowSrc"
+      ]
+    },
+    "/home/frank/code_base/bridged/contracts/1inch/Escrow.sol": {
+      "lastModificationDate": 1754166100421,
+      "contentHash": "50d408944fc15eb8ab7d21aeb63736f2",
+      "sourceName": "contracts/1inch/Escrow.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/Create2.sol",
+        "./libraries/ProxyHashLib.sol",
+        "./interfaces/IEscrow.sol",
+        "./BaseEscrow.sol"
+      ],
+      "versionPragmas": [
+        "0.8.23"
+      ],
+      "artifacts": [
+        "Escrow"
+      ]
+    },
+    "/home/frank/code_base/bridged/contracts/1inch/interfaces/IEscrow.sol": {
+      "lastModificationDate": 1754165414934,
+      "contentHash": "4d5ac0ffcb096c52a61478472b408602",
+      "sourceName": "contracts/1inch/interfaces/IEscrow.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IBaseEscrow.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IEscrow"
+      ]
+    },
+    "/home/frank/code_base/bridged/contracts/1inch/libraries/ProxyHashLib.sol": {
+      "lastModificationDate": 1754165415071,
+      "contentHash": "3d581acddad0e446e6f14a3c73dc12ac",
+      "sourceName": "contracts/1inch/libraries/ProxyHashLib.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ProxyHashLib"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@openzeppelin/contracts/utils/Create2.sol": {
+      "lastModificationDate": 1754165981810,
+      "contentHash": "841323ddbb94316c3f9ae8a19ce080ff",
+      "sourceName": "@openzeppelin/contracts/utils/Create2.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Errors.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Create2"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@openzeppelin/contracts/utils/Errors.sol": {
+      "lastModificationDate": 1754165981975,
+      "contentHash": "6b5eac2b85500c3012977849cfd633d8",
+      "sourceName": "@openzeppelin/contracts/utils/Errors.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Errors"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@1inch/limit-order-protocol-contract/contracts/extensions/FeeTaker.sol": {
+      "lastModificationDate": 1754168135627,
+      "contentHash": "c2b7e156baa1770a66ba4097be3c29e6",
+      "sourceName": "@1inch/limit-order-protocol-contract/contracts/extensions/FeeTaker.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@1inch/solidity-utils/contracts/libraries/AddressLib.sol",
+        "@1inch/solidity-utils/contracts/libraries/SafeERC20.sol",
+        "@1inch/solidity-utils/contracts/libraries/UniERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/access/Ownable.sol",
+        "@openzeppelin/contracts/utils/math/Math.sol",
+        "../interfaces/IOrderMixin.sol",
+        "../interfaces/IPostInteraction.sol",
+        "../libraries/MakerTraitsLib.sol",
+        "./AmountGetterWithFee.sol"
+      ],
+      "versionPragmas": [
+        "0.8.23"
+      ],
+      "artifacts": [
+        "FeeTaker"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@1inch/limit-order-protocol-contract/contracts/interfaces/IOrderMixin.sol": {
+      "lastModificationDate": 1754168135657,
+      "contentHash": "abd5677e616c8067eecb5a9fd4323767",
+      "sourceName": "@1inch/limit-order-protocol-contract/contracts/interfaces/IOrderMixin.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@1inch/solidity-utils/contracts/libraries/AddressLib.sol",
+        "../libraries/MakerTraitsLib.sol",
+        "../libraries/TakerTraitsLib.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IOrderMixin"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@1inch/limit-order-protocol-contract/contracts/interfaces/IPostInteraction.sol": {
+      "lastModificationDate": 1754168135657,
+      "contentHash": "6ce489d9dd74739a5df94dec5409dc47",
+      "sourceName": "@1inch/limit-order-protocol-contract/contracts/interfaces/IPostInteraction.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IOrderMixin.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IPostInteraction"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@1inch/limit-order-protocol-contract/contracts/libraries/MakerTraitsLib.sol": {
+      "lastModificationDate": 1754168135676,
+      "contentHash": "b101d71d126656fd2c7ff33492ef44b0",
+      "sourceName": "@1inch/limit-order-protocol-contract/contracts/libraries/MakerTraitsLib.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "MakerTraitsLib"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
+      "lastModificationDate": 1754165981995,
+      "contentHash": "d3c790edc9ccf808a17c5a6cd13614fd",
+      "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@1inch/solidity-utils/contracts/libraries/UniERC20.sol": {
+      "lastModificationDate": 1754167092335,
+      "contentHash": "f9d693bbaef9e304008cc64674440e20",
+      "sourceName": "@1inch/solidity-utils/contracts/libraries/UniERC20.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "../interfaces/IERC20MetadataUppercase.sol",
+        "./SafeERC20.sol",
+        "./StringUtil.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "UniERC20"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@openzeppelin/contracts/utils/math/Math.sol": {
+      "lastModificationDate": 1754165981995,
+      "contentHash": "5ec781e33d3a9ac91ffdc83d94420412",
+      "sourceName": "@openzeppelin/contracts/utils/math/Math.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Panic.sol",
+        "./SafeCast.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@1inch/limit-order-protocol-contract/contracts/extensions/AmountGetterWithFee.sol": {
+      "lastModificationDate": 1754168135617,
+      "contentHash": "e852834af7d0aaab1c3dc4fb3b3fe084",
+      "sourceName": "@1inch/limit-order-protocol-contract/contracts/extensions/AmountGetterWithFee.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/math/Math.sol",
+        "../interfaces/IOrderMixin.sol",
+        "./AmountGetterBase.sol"
+      ],
+      "versionPragmas": [
+        "0.8.23"
+      ],
+      "artifacts": [
+        "AmountGetterWithFee"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@1inch/limit-order-protocol-contract/contracts/libraries/TakerTraitsLib.sol": {
+      "lastModificationDate": 1754168135676,
+      "contentHash": "19dca227890eda653119d493a4abdec7",
+      "sourceName": "@1inch/limit-order-protocol-contract/contracts/libraries/TakerTraitsLib.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "TakerTraitsLib"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@openzeppelin/contracts/utils/Context.sol": {
+      "lastModificationDate": 1754165981810,
+      "contentHash": "67bfbc07588eb8683b3fd8f6f909563e",
+      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@1inch/solidity-utils/contracts/interfaces/IERC20MetadataUppercase.sol": {
+      "lastModificationDate": 1754167092106,
+      "contentHash": "6ac2c056567cec4b8f8de64b41227ec1",
+      "sourceName": "@1inch/solidity-utils/contracts/interfaces/IERC20MetadataUppercase.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20MetadataUppercase"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@1inch/solidity-utils/contracts/libraries/StringUtil.sol": {
+      "lastModificationDate": 1754167092308,
+      "contentHash": "505152fff881bca04521a6457f566fd6",
+      "sourceName": "@1inch/solidity-utils/contracts/libraries/StringUtil.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "StringUtil"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+      "lastModificationDate": 1754165981985,
+      "contentHash": "513778b30d2750f5d2b9b19bbcf748a5",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.2"
+      ],
+      "artifacts": [
+        "IERC20Metadata"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@openzeppelin/contracts/utils/Panic.sol": {
+      "lastModificationDate": 1754165982004,
+      "contentHash": "2133dc13536b4a6a98131e431fac59e1",
+      "sourceName": "@openzeppelin/contracts/utils/Panic.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Panic"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@openzeppelin/contracts/utils/math/SafeCast.sol": {
+      "lastModificationDate": 1754165982004,
+      "contentHash": "2adca1150f58fc6f3d1f0a0f22ee7cca",
+      "sourceName": "@openzeppelin/contracts/utils/math/SafeCast.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "SafeCast"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@1inch/limit-order-protocol-contract/contracts/extensions/AmountGetterBase.sol": {
+      "lastModificationDate": 1754168135608,
+      "contentHash": "70cd0cb21f54c2e6c625b769241ec487",
+      "sourceName": "@1inch/limit-order-protocol-contract/contracts/extensions/AmountGetterBase.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/math/Math.sol",
+        "../interfaces/IAmountGetter.sol",
+        "../interfaces/IOrderMixin.sol"
+      ],
+      "versionPragmas": [
+        "0.8.23"
+      ],
+      "artifacts": [
+        "AmountGetterBase"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@1inch/limit-order-protocol-contract/contracts/interfaces/IAmountGetter.sol": {
+      "lastModificationDate": 1754168135647,
+      "contentHash": "05de933187f71ac8b6fb83d9b8ad9c1c",
+      "sourceName": "@1inch/limit-order-protocol-contract/contracts/interfaces/IAmountGetter.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IOrderMixin.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IAmountGetter"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@1inch/limit-order-protocol-contract/contracts/interfaces/ITakerInteraction.sol": {
+      "lastModificationDate": 1754168135666,
+      "contentHash": "f00662d8bc258f4c33fb442e4d523692",
+      "sourceName": "@1inch/limit-order-protocol-contract/contracts/interfaces/ITakerInteraction.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IOrderMixin.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ITakerInteraction"
+      ]
+    },
+    "/home/frank/code_base/bridged/contracts/1inch/MerkleStorageInvalidator.sol": {
+      "lastModificationDate": 1754167994507,
+      "contentHash": "b864bda7ef5e8bce4db2e8338e7df4ee",
+      "sourceName": "contracts/1inch/MerkleStorageInvalidator.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@1inch/limit-order-protocol-contract/contracts/interfaces/IOrderMixin.sol",
+        "@1inch/limit-order-protocol-contract/contracts/libraries/ExtensionLib.sol",
+        "@1inch/limit-order-protocol-contract/contracts/interfaces/ITakerInteraction.sol",
+        "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol",
+        "./interfaces/IEscrowFactory.sol",
+        "./interfaces/IMerkleStorageInvalidator.sol",
+        "./EscrowFactoryContext.sol"
+      ],
+      "versionPragmas": [
+        "0.8.23"
+      ],
+      "artifacts": [
+        "MerkleStorageInvalidator"
+      ]
+    },
+    "/home/frank/code_base/bridged/contracts/1inch/interfaces/IEscrowFactory.sol": {
+      "lastModificationDate": 1754167290351,
+      "contentHash": "8bbda7c661d38b680a8160ee999cff7c",
+      "sourceName": "contracts/1inch/interfaces/IEscrowFactory.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@1inch/solidity-utils/contracts/libraries/AddressLib.sol",
+        "../libraries/TimelocksLib.sol",
+        "./IBaseEscrow.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IEscrowFactory"
+      ]
+    },
+    "/home/frank/code_base/bridged/contracts/1inch/interfaces/IMerkleStorageInvalidator.sol": {
+      "lastModificationDate": 1754165414944,
+      "contentHash": "eb15b25f4c24b45baa0524d26bd3e9b3",
+      "sourceName": "contracts/1inch/interfaces/IMerkleStorageInvalidator.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.23"
+      ],
+      "artifacts": [
+        "IMerkleStorageInvalidator"
+      ]
+    },
+    "/home/frank/code_base/bridged/contracts/1inch/EscrowFactoryContext.sol": {
+      "lastModificationDate": 1754165415737,
+      "contentHash": "b262c83e1b1f1c35a3a6e53b29ca7665",
+      "sourceName": "contracts/1inch/EscrowFactoryContext.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.23"
+      ],
+      "artifacts": []
+    },
+    "/home/frank/code_base/bridged/node_modules/@1inch/limit-order-protocol-contract/contracts/libraries/ExtensionLib.sol": {
+      "lastModificationDate": 1754168135666,
+      "contentHash": "a12a1eb8bd34785b1b1b25b9fd299b77",
+      "sourceName": "@1inch/limit-order-protocol-contract/contracts/libraries/ExtensionLib.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IOrderMixin.sol",
+        "./OffsetsLib.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ExtensionLib"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@openzeppelin/contracts/utils/cryptography/MerkleProof.sol": {
+      "lastModificationDate": 1754165981995,
+      "contentHash": "d57b0dba03e8cc7942bf797fc9fe1d29",
+      "sourceName": "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Hashes.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "MerkleProof"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@1inch/limit-order-protocol-contract/contracts/libraries/OffsetsLib.sol": {
+      "lastModificationDate": 1754168135676,
+      "contentHash": "1ce57e5d8c750427d440b6f2390eb951",
+      "sourceName": "@1inch/limit-order-protocol-contract/contracts/libraries/OffsetsLib.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "OffsetsLib"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@openzeppelin/contracts/utils/cryptography/Hashes.sol": {
+      "lastModificationDate": 1754165981975,
+      "contentHash": "073b9c3ce7bc358a876ed2b3479db88c",
+      "sourceName": "@openzeppelin/contracts/utils/cryptography/Hashes.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Hashes"
+      ]
+    },
+    "/home/frank/code_base/bridged/contracts/1inch/BaseEscrowFactory.sol": {
+      "lastModificationDate": 1754168255018,
+      "contentHash": "fb05fdcc2a71208ae55ac52f590a4378",
+      "sourceName": "contracts/1inch/BaseEscrowFactory.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/proxy/Clones.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/utils/Create2.sol",
+        "@1inch/solidity-utils/contracts/libraries/AddressLib.sol",
+        "@1inch/solidity-utils/contracts/libraries/SafeERC20.sol",
+        "@1inch/limit-order-protocol-contract/contracts/interfaces/IOrderMixin.sol",
+        "@1inch/limit-order-protocol-contract/contracts/interfaces/IPostInteraction.sol",
+        "@1inch/limit-order-protocol-contract/contracts/libraries/MakerTraitsLib.sol",
+        "@1inch/limit-order-protocol-contract/contracts/extensions/FeeTaker.sol",
+        "@1inch/limit-order-settlement/contracts/SimpleSettlement.sol",
+        "./libraries/ImmutablesLib.sol",
+        "./libraries/TimelocksLib.sol",
+        "./interfaces/IEscrowFactory.sol",
+        "./interfaces/IBaseEscrow.sol",
+        "./EscrowFactoryContext.sol",
+        "./MerkleStorageInvalidator.sol"
+      ],
+      "versionPragmas": [
+        "0.8.23"
+      ],
+      "artifacts": [
+        "BaseEscrowFactory"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@openzeppelin/contracts/proxy/Clones.sol": {
+      "lastModificationDate": 1754165981810,
+      "contentHash": "1dd02316d75b8147282bef56d72f21f0",
+      "sourceName": "@openzeppelin/contracts/proxy/Clones.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Create2.sol",
+        "../utils/Errors.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Clones"
+      ]
+    },
+    "/home/frank/code_base/bridged/node_modules/@1inch/limit-order-settlement/contracts/SimpleSettlement.sol": {
+      "lastModificationDate": 1754166268280,
+      "contentHash": "8e6244bf0434b9e9145732850189e632",
+      "sourceName": "@1inch/limit-order-settlement/contracts/SimpleSettlement.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/utils/math/Math.sol",
+        "@1inch/limit-order-protocol-contract/contracts/interfaces/IOrderMixin.sol",
+        "@1inch/limit-order-protocol-contract/contracts/extensions/FeeTaker.sol"
+      ],
+      "versionPragmas": [
+        "0.8.23"
+      ],
+      "artifacts": [
+        "SimpleSettlement"
+      ]
+    },
+    "/home/frank/code_base/bridged/contracts/1inch/EscrowFactory.sol": {
+      "lastModificationDate": 1754166849839,
+      "contentHash": "9f5544566417afa4e3591b518fdab031",
+      "sourceName": "contracts/1inch/EscrowFactory.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@1inch/limit-order-settlement/contracts/SimpleSettlement.sol",
+        "./libraries/ProxyHashLib.sol",
+        "./BaseEscrowFactory.sol",
+        "./EscrowDst.sol",
+        "./EscrowSrc.sol",
+        "./MerkleStorageInvalidator.sol"
+      ],
+      "versionPragmas": [
+        "0.8.23"
+      ],
+      "artifacts": [
+        "EscrowFactory"
+      ]
+    },
+    "/home/frank/code_base/bridged/contracts/1inch/EscrowDst.sol": {
+      "lastModificationDate": 1754167290351,
+      "contentHash": "dd35f82bbbbdc8254cb5c429f6201685",
+      "sourceName": "contracts/1inch/EscrowDst.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@1inch/solidity-utils/contracts/libraries/SafeERC20.sol",
+        "@1inch/solidity-utils/contracts/libraries/AddressLib.sol",
+        "./libraries/TimelocksLib.sol",
+        "./libraries/ImmutablesLib.sol",
+        "./interfaces/IEscrowDst.sol",
+        "./BaseEscrow.sol",
+        "./Escrow.sol"
+      ],
+      "versionPragmas": [
+        "0.8.23"
+      ],
+      "artifacts": [
+        "EscrowDst"
+      ]
+    },
+    "/home/frank/code_base/bridged/contracts/1inch/interfaces/IEscrowDst.sol": {
+      "lastModificationDate": 1754165414934,
+      "contentHash": "9dae4bf6398bb14c8a8f76ff776ad5cb",
+      "sourceName": "contracts/1inch/interfaces/IEscrowDst.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IEscrow.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IEscrowDst"
+      ]
+    },
+    "/home/frank/code_base/bridged/contracts/1inch/interfaces/IResolverExample.sol": {
+      "lastModificationDate": 1754167994507,
+      "contentHash": "87ea7995e3e839a8e4e461d01ee04b94",
+      "sourceName": "contracts/1inch/interfaces/IResolverExample.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@1inch/limit-order-protocol-contract/contracts/interfaces/IOrderMixin.sol",
+        "@1inch/limit-order-protocol-contract/contracts/libraries/TakerTraitsLib.sol",
+        "../interfaces/IBaseEscrow.sol"
+      ],
+      "versionPragmas": [
+        "0.8.23"
+      ],
+      "artifacts": [
+        "IResolverExample"
       ]
     }
   }

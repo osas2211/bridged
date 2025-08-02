@@ -1,0 +1,280 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ImmutablesLib",
+  "sourceName": "contracts/1inch/libraries/ImmutablesLib.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "IndexOutOfRange",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "orderHash",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "hashlock",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "Address",
+              "name": "maker",
+              "type": "uint256"
+            },
+            {
+              "internalType": "Address",
+              "name": "taker",
+              "type": "uint256"
+            },
+            {
+              "internalType": "Address",
+              "name": "token",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "safetyDeposit",
+              "type": "uint256"
+            },
+            {
+              "internalType": "Timelocks",
+              "name": "timelocks",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "parameters",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct IBaseEscrow.Immutables",
+          "name": "immutables",
+          "type": "tuple"
+        }
+      ],
+      "name": "integratorFeeAmountCd",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "ret",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "orderHash",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "hashlock",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "Address",
+              "name": "maker",
+              "type": "uint256"
+            },
+            {
+              "internalType": "Address",
+              "name": "taker",
+              "type": "uint256"
+            },
+            {
+              "internalType": "Address",
+              "name": "token",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "safetyDeposit",
+              "type": "uint256"
+            },
+            {
+              "internalType": "Timelocks",
+              "name": "timelocks",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "parameters",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct IBaseEscrow.Immutables",
+          "name": "immutables",
+          "type": "tuple"
+        }
+      ],
+      "name": "integratorFeeRecipientCd",
+      "outputs": [
+        {
+          "internalType": "Address",
+          "name": "ret",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "orderHash",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "hashlock",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "Address",
+              "name": "maker",
+              "type": "uint256"
+            },
+            {
+              "internalType": "Address",
+              "name": "taker",
+              "type": "uint256"
+            },
+            {
+              "internalType": "Address",
+              "name": "token",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "safetyDeposit",
+              "type": "uint256"
+            },
+            {
+              "internalType": "Timelocks",
+              "name": "timelocks",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "parameters",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct IBaseEscrow.Immutables",
+          "name": "immutables",
+          "type": "tuple"
+        }
+      ],
+      "name": "protocolFeeAmountCd",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "ret",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "orderHash",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "hashlock",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "Address",
+              "name": "maker",
+              "type": "uint256"
+            },
+            {
+              "internalType": "Address",
+              "name": "taker",
+              "type": "uint256"
+            },
+            {
+              "internalType": "Address",
+              "name": "token",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "safetyDeposit",
+              "type": "uint256"
+            },
+            {
+              "internalType": "Timelocks",
+              "name": "timelocks",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "parameters",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct IBaseEscrow.Immutables",
+          "name": "immutables",
+          "type": "tuple"
+        }
+      ],
+      "name": "protocolFeeRecipientCd",
+      "outputs": [
+        {
+          "internalType": "Address",
+          "name": "ret",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080806040523461001a576101a49081610020823930815050f35b600080fdfe6080604090808252600436101561001557600080fd5b60003560e01c908163505ba09b146100ce575080636e30c3eb146100ab578063967d20441461008a5763cc51c7171461004d57600080fd5b8061006561005a36610103565b61010081019061013b565b919091106100795760208092519101358152f35b8151631390f2a160e01b8152600490fd5b50602061009961005a36610103565b91909110610079576020915190358152f35b5060606100ba61005a36610103565b919091106100795781602092519101358152f35b608091506100de61005a36610103565b929092106100f457506060602092519101358152f35b631390f2a160e01b8152600490fd5b60031990602081830112610136576004359167ffffffffffffffff83116101365782610120920301126101365760040190565b600080fd5b903590601e1981360301821215610136570180359067ffffffffffffffff8211610136576020019181360383136101365756fea26469706673582212200ceef14e67ab90afadabfd4ce1e2939c7a883a9ce2e1d50fefd61593a046de8764736f6c63430008170033",
+  "deployedBytecode": "0x6080604090808252600436101561001557600080fd5b60003560e01c908163505ba09b146100ce575080636e30c3eb146100ab578063967d20441461008a5763cc51c7171461004d57600080fd5b8061006561005a36610103565b61010081019061013b565b919091106100795760208092519101358152f35b8151631390f2a160e01b8152600490fd5b50602061009961005a36610103565b91909110610079576020915190358152f35b5060606100ba61005a36610103565b919091106100795781602092519101358152f35b608091506100de61005a36610103565b929092106100f457506060602092519101358152f35b631390f2a160e01b8152600490fd5b60031990602081830112610136576004359167ffffffffffffffff83116101365782610120920301126101365760040190565b600080fd5b903590601e1981360301821215610136570180359067ffffffffffffffff8211610136576020019181360383136101365756fea26469706673582212200ceef14e67ab90afadabfd4ce1e2939c7a883a9ce2e1d50fefd61593a046de8764736f6c63430008170033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

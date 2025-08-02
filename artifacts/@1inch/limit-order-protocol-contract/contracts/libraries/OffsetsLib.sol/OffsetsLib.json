@@ -1,0 +1,16 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "OffsetsLib",
+  "sourceName": "@1inch/limit-order-protocol-contract/contracts/libraries/OffsetsLib.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "OffsetOutOfBounds",
+      "type": "error"
+    }
+  ],
+  "bytecode": "0x60808060405234601757603a9081601d823930815050f35b600080fdfe600080fdfea26469706673582212204a98ee45e0bcf463b2839dfee3d84766d9549974667ec9f63af3ed2a0687eec264736f6c63430008170033",
+  "deployedBytecode": "0x600080fdfea26469706673582212204a98ee45e0bcf463b2839dfee3d84766d9549974667ec9f63af3ed2a0687eec264736f6c63430008170033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

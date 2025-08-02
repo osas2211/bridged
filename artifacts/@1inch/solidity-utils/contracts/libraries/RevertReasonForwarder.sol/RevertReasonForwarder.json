@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "RevertReasonForwarder",
+  "sourceName": "@1inch/solidity-utils/contracts/libraries/RevertReasonForwarder.sol",
+  "abi": [],
+  "bytecode": "0x60808060405234601757603a9081601d823930815050f35b600080fdfe600080fdfea26469706673582212202e7cb5e3a5c3ece4e5d6fa2db19ac3d99bfca53dfe340b7e23dfe55efbf2a2f364736f6c63430008170033",
+  "deployedBytecode": "0x600080fdfea26469706673582212202e7cb5e3a5c3ece4e5d6fa2db19ac3d99bfca53dfe340b7e23dfe55efbf2a2f364736f6c63430008170033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

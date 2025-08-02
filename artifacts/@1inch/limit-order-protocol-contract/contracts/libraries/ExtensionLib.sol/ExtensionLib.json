@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ExtensionLib",
+  "sourceName": "@1inch/limit-order-protocol-contract/contracts/libraries/ExtensionLib.sol",
+  "abi": [],
+  "bytecode": "0x60808060405234601757603a9081601d823930815050f35b600080fdfe600080fdfea2646970667358221220260bd49935c2f7b8a922e48c2d2db8c20464db4919d45f6fbdd9d9cc4f077dff64736f6c63430008170033",
+  "deployedBytecode": "0x600080fdfea2646970667358221220260bd49935c2f7b8a922e48c2d2db8c20464db4919d45f6fbdd9d9cc4f077dff64736f6c63430008170033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
