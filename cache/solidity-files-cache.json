@@ -36,6 +36,42 @@
       "artifacts": [
         "PreimagePredicate"
       ]
+    },
+    "/home/frank/code_base/bridged/contracts/evm/ETH_HTLC.sol": {
+      "lastModificationDate": 1754139632405,
+      "contentHash": "e0a366d48c59b88a59b7dad3448157ec",
+      "sourceName": "contracts/evm/ETH_HTLC.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ETH_HTLC"
+      ]
     }
   }
 }
