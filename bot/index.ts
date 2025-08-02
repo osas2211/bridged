@@ -1,8 +1,6 @@
 import "dotenv/config"
 import { ethers } from "ethers"
 import { TronWeb } from "tronweb"
-import fs from "fs"
-import path from "path"
 import { EventLog } from "ethers"
 import ETH_HTLC_ABI from "../artifacts/contracts/evm/ETH_HTLC.sol/ETH_HTLC.json"
 import TRX_HTLC_ABI from "../artifacts/contracts/tron/TRX_HTLC.sol/TRX_HTLC.json"
