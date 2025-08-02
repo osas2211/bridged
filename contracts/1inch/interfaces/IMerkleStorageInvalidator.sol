@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.23;
+pragma solidity ^0.8.23;
 
 /**
  * @title Merkle Storage Invalidator interface
@@ -28,5 +28,7 @@ interface IMerkleStorageInvalidator {
      * @return index Index of the last validated hashed secret.
      * @return secretHash Last validated hashed secret.
      */
-    function lastValidated(bytes32 key) external view returns (uint256 index, bytes32 secretHash);
+    function lastValidated(
+        bytes32 key
+    ) external view returns (uint256 index, bytes32 secretHash);
 }

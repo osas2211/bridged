@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.23;
+pragma solidity ^0.8.23;
 
-import { IOrderMixin } from "./IOrderMixin.sol";
+import {IOrderMixin} from "./IOrderMixin.sol";
 
 /**
  * @title IOrderRegistrator
@@ -16,7 +16,11 @@ interface IOrderRegistrator {
      * @param extension The extension data associated with the order.
      * @param signature The signature of the order.
      */
-    event OrderRegistered(IOrderMixin.Order order, bytes extension, bytes signature);
+    event OrderRegistered(
+        IOrderMixin.Order order,
+        bytes extension,
+        bytes signature
+    );
 
     /**
      * @notice Registers an order.
@@ -24,5 +28,9 @@ interface IOrderRegistrator {
      * @param extension The extension data associated with the order.
      * @param signature The signature of the order.
      */
-    function registerOrder(IOrderMixin.Order calldata order, bytes calldata extension, bytes calldata signature) external;
+    function registerOrder(
+        IOrderMixin.Order calldata order,
+        bytes calldata extension,
+        bytes calldata signature
+    ) external;
 }

@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.23;
+pragma solidity ^0.8.23;
 
-import { IOrderMixin } from "limit-order-protocol/contracts/interfaces/IOrderMixin.sol";
-import { TakerTraits } from "limit-order-protocol/contracts/libraries/TakerTraitsLib.sol";
+import {IOrderMixin} from "@1inch/limit-order-protocol-contract/contracts/interfaces/IOrderMixin.sol";
+import {TakerTraits} from "@1inch/limit-order-protocol-contract/contracts/libraries/TakerTraitsLib.sol";
 
-import { IBaseEscrow } from "../interfaces/IBaseEscrow.sol";
+import {IBaseEscrow} from "../interfaces/IBaseEscrow.sol";
 
 /**
  * @title Interface for the sample implementation of a Resolver contract for cross-chain swap.
@@ -41,12 +41,18 @@ interface IResolverExample {
      * @param dstImmutables The immutables of the escrow contract that are used in deployment.
      * @param srcCancellationTimestamp The start of the cancellation period for the source chain.
      */
-    function deployDst(IBaseEscrow.Immutables calldata dstImmutables, uint256 srcCancellationTimestamp) external payable;
+    function deployDst(
+        IBaseEscrow.Immutables calldata dstImmutables,
+        uint256 srcCancellationTimestamp
+    ) external payable;
 
     /**
      * @notice Allows the owner to make arbitrary calls to other contracts on behalf of this contract.
      * @param targets The addresses of the contracts to call.
      * @param arguments The arguments to pass to the contract calls.
      */
-    function arbitraryCalls(address[] calldata targets, bytes[] calldata arguments) external;
+    function arbitraryCalls(
+        address[] calldata targets,
+        bytes[] calldata arguments
+    ) external;
 }

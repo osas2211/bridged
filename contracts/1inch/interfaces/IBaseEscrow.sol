@@ -2,9 +2,9 @@
 
 pragma solidity ^0.8.0;
 
-import { Address } from "solidity-utils/contracts/libraries/AddressLib.sol";
+import {Address} from "@1inch/solidity-utils/contracts/libraries/AddressLib.sol";
 
-import { Timelocks } from "../libraries/TimelocksLib.sol";
+import {Timelocks} from "../libraries/TimelocksLib.sol";
 
 /**
  * @title Base Escrow interface for cross-chain atomic swap.
@@ -14,14 +14,14 @@ import { Timelocks } from "../libraries/TimelocksLib.sol";
 interface IBaseEscrow {
     struct Immutables {
         bytes32 orderHash;
-        bytes32 hashlock;  // Hash of the secret.
+        bytes32 hashlock; // Hash of the secret.
         Address maker;
         Address taker;
         Address token;
         uint256 amount;
         uint256 safetyDeposit;
         Timelocks timelocks;
-        bytes parameters;  // For now only EscrowDst.withdraw() uses it.
+        bytes parameters; // For now only EscrowDst.withdraw() uses it.
     }
 
     /**
@@ -51,8 +51,10 @@ interface IBaseEscrow {
     /* solhint-disable func-name-mixedcase */
     /// @notice Returns the delay for rescuing funds from the escrow.
     function RESCUE_DELAY() external view returns (uint256);
+
     /// @notice Returns the address of the factory that created the escrow.
     function FACTORY() external view returns (address);
+
     /* solhint-enable func-name-mixedcase */
 
     /**
@@ -79,5 +81,9 @@ interface IBaseEscrow {
      * @param amount The amount of tokens to rescue.
      * @param immutables The immutables of the escrow contract.
      */
-    function rescueFunds(address token, uint256 amount, Immutables calldata immutables) external;
+    function rescueFunds(
+        address token,
+        uint256 amount,
+        Immutables calldata immutables
+    ) external;
 }

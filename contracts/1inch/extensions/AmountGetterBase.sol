@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.23;
+pragma solidity ^0.8.23;
 
-import { Math } from "@openzeppelin/contracts/utils/math/Math.sol";
+import {Math} from "@openzeppelin/contracts/utils/math/Math.sol";
 
-import { IAmountGetter } from "../interfaces/IAmountGetter.sol";
-import { IOrderMixin } from "../interfaces/IOrderMixin.sol";
+import {IAmountGetter} from "../interfaces/IAmountGetter.sol";
+import {IOrderMixin} from "../interfaces/IOrderMixin.sol";
 
 /// @title Base price getter contract that either calls external getter or applies linear formula
 contract AmountGetterBase is IAmountGetter {
@@ -23,7 +23,16 @@ contract AmountGetterBase is IAmountGetter {
         uint256 remainingMakingAmount,
         bytes calldata extraData
     ) external view returns (uint256) {
-        return _getMakingAmount(order, extension, orderHash, taker, takingAmount, remainingMakingAmount, extraData);
+        return
+            _getMakingAmount(
+                order,
+                extension,
+                orderHash,
+                taker,
+                takingAmount,
+                remainingMakingAmount,
+                extraData
+            );
     }
 
     /**
@@ -38,7 +47,16 @@ contract AmountGetterBase is IAmountGetter {
         uint256 remainingMakingAmount,
         bytes calldata extraData
     ) external view returns (uint256) {
-        return _getTakingAmount(order, extension, orderHash, taker, makingAmount, remainingMakingAmount, extraData);
+        return
+            _getTakingAmount(
+                order,
+                extension,
+                orderHash,
+                taker,
+                makingAmount,
+                remainingMakingAmount,
+                extraData
+            );
     }
 
     function _getMakingAmount(
@@ -51,9 +69,16 @@ contract AmountGetterBase is IAmountGetter {
         bytes calldata extraData
     ) internal view virtual returns (uint256) {
         if (extraData.length >= 20) {
-            return IAmountGetter(address(bytes20(extraData))).getMakingAmount(
-                order, extension, orderHash, taker, takingAmount, remainingMakingAmount, extraData[20:]
-            );
+            return
+                IAmountGetter(address(bytes20(extraData))).getMakingAmount(
+                    order,
+                    extension,
+                    orderHash,
+                    taker,
+                    takingAmount,
+                    remainingMakingAmount,
+                    extraData[20:]
+                );
         } else {
             return order.makingAmount.mulDiv(takingAmount, order.takingAmount);
         }
@@ -69,11 +94,23 @@ contract AmountGetterBase is IAmountGetter {
         bytes calldata extraData
     ) internal view virtual returns (uint256) {
         if (extraData.length >= 20) {
-            return IAmountGetter(address(bytes20(extraData))).getTakingAmount(
-                order, extension, orderHash, taker, makingAmount, remainingMakingAmount, extraData[20:]
-            );
+            return
+                IAmountGetter(address(bytes20(extraData))).getTakingAmount(
+                    order,
+                    extension,
+                    orderHash,
+                    taker,
+                    makingAmount,
+                    remainingMakingAmount,
+                    extraData[20:]
+                );
         } else {
-            return order.takingAmount.mulDiv(makingAmount, order.makingAmount, Math.Rounding.Ceil);
+            return
+                order.takingAmount.mulDiv(
+                    makingAmount,
+                    order.makingAmount,
+                    Math.Rounding.Ceil
+                );
         }
     }
 }
