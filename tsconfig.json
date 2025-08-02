@@ -27,7 +27,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "hardhat.config.ts"
+    "hardhat.config.ts",
+    "scripts/evm/deploy_predicate.js"
   ],
   "exclude": ["node_modules"]
 }

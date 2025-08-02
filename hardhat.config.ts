@@ -25,12 +25,16 @@ const config = {
   networks: {
     sepolia: {
       url: process.env.SEPOLIA_RPC,
-      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+      accounts: process.env.EVM_PRIVATE_KEY
+        ? [process.env.EVM_PRIVATE_KEY]
+        : [],
     },
     ghostnet: {
       chainId: 128123,
       url: "https://node.ghostnet.etherlink.com",
-      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+      accounts: process.env.EVM_PRIVATE_KEY
+        ? [process.env.EVM_PRIVATE_KEY]
+        : [],
     },
     "etherlink-testnet": {
       url: "https://node.ghostnet.etherlink.com",
