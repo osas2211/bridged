@@ -739,8 +739,8 @@
       ]
     },
     "/home/frank/code_base/bridged/contracts/1inch/Escrow.sol": {
-      "lastModificationDate": 1754166100421,
-      "contentHash": "50d408944fc15eb8ab7d21aeb63736f2",
+      "lastModificationDate": 1754169785679,
+      "contentHash": "3494500fc7990775dc7c914c4db80bd0",
       "sourceName": "contracts/1inch/Escrow.sol",
       "solcConfig": {
         "version": "0.8.23",
@@ -774,7 +774,7 @@
         "./BaseEscrow.sol"
       ],
       "versionPragmas": [
-        "0.8.23"
+        "^0.8.23"
       ],
       "artifacts": [
         "Escrow"
