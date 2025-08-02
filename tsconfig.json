@@ -29,7 +29,8 @@
     ".next/types/**/*.ts",
     "hardhat.config.ts",
     "scripts/evm/deploy_predicate.js",
-    "scripts/tron/deploy-trc20-tokens.js"
+    "scripts/tron/deploy-trc20-tokens.js",
+    "scripts/evm/deploy_lop.js"
   ],
   "exclude": ["node_modules"]
 }

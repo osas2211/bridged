@@ -5098,6 +5098,43 @@
       "artifacts": [
         "ICreate3Deployer"
       ]
+    },
+    "/home/frank/code_base/bridged/contracts/evm/WETH9.sol": {
+      "lastModificationDate": 1754176886042,
+      "contentHash": "ff409c7bfada2cf00a2019f5333056ad",
+      "sourceName": "contracts/evm/WETH9.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "WETH9"
+      ]
     }
   }
 }
