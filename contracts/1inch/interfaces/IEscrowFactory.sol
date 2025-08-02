@@ -2,11 +2,11 @@
 
 pragma solidity ^0.8.0;
 
-import {Address} from "@1inch/solidity-utils/contracts/libraries/AddressLib.sol";
+import { Address } from "solidity-utils/contracts/libraries/AddressLib.sol";
 
-import {Timelocks} from "../libraries/TimelocksLib.sol";
+import { Timelocks } from "../libraries/TimelocksLib.sol";
 
-import {IBaseEscrow} from "./IBaseEscrow.sol";
+import { IBaseEscrow } from "./IBaseEscrow.sol";
 
 /**
  * @title Escrow Factory interface for cross-chain atomic swap.
@@ -41,10 +41,7 @@ interface IEscrowFactory {
      * @param srcImmutables The immutables of the escrow contract that are used in deployment on the source chain.
      * @param dstImmutablesComplement Additional immutables related to the escrow contract on the destination chain.
      */
-    event SrcEscrowCreated(
-        IBaseEscrow.Immutables srcImmutables,
-        DstImmutablesComplement dstImmutablesComplement
-    );
+    event SrcEscrowCreated(IBaseEscrow.Immutables srcImmutables, DstImmutablesComplement dstImmutablesComplement);
     /**
      * @notice Emitted on EscrowDst deployment.
      * @param escrow The address of the created escrow.
@@ -56,10 +53,8 @@ interface IEscrowFactory {
     /* solhint-disable func-name-mixedcase */
     /// @notice Returns the address of implementation on the source chain.
     function ESCROW_SRC_IMPLEMENTATION() external view returns (address);
-
     /// @notice Returns the address of implementation on the destination chain.
     function ESCROW_DST_IMPLEMENTATION() external view returns (address);
-
     /* solhint-enable func-name-mixedcase */
 
     /**
@@ -69,26 +64,19 @@ interface IEscrowFactory {
      * @param dstImmutables The immutables of the escrow contract that are used in deployment.
      * @param srcCancellationTimestamp The start of the cancellation period for the source chain.
      */
-    function createDstEscrow(
-        IBaseEscrow.Immutables calldata dstImmutables,
-        uint256 srcCancellationTimestamp
-    ) external payable;
+    function createDstEscrow(IBaseEscrow.Immutables calldata dstImmutables, uint256 srcCancellationTimestamp) external payable;
 
     /**
      * @notice Returns the deterministic address of the source escrow based on the salt.
      * @param immutables The immutable arguments used to compute salt for escrow deployment.
      * @return The computed address of the escrow.
      */
-    function addressOfEscrowSrc(
-        IBaseEscrow.Immutables calldata immutables
-    ) external view returns (address);
+    function addressOfEscrowSrc(IBaseEscrow.Immutables calldata immutables) external view returns (address);
 
     /**
      * @notice Returns the deterministic address of the destination escrow based on the salt.
      * @param immutables The immutable arguments used to compute salt for escrow deployment.
      * @return The computed address of the escrow.
      */
-    function addressOfEscrowDst(
-        IBaseEscrow.Immutables calldata immutables
-    ) external view returns (address);
+    function addressOfEscrowDst(IBaseEscrow.Immutables calldata immutables) external view returns (address);
 }
