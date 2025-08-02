@@ -72,6 +72,42 @@
       "artifacts": [
         "ETH_HTLC"
       ]
+    },
+    "/home/frank/code_base/bridged/contracts/tron/TRX_HTLC.sol": {
+      "lastModificationDate": 1754139776278,
+      "contentHash": "70ab00f4f7dbd45b9a7342a81d71d1e5",
+      "sourceName": "contracts/tron/TRX_HTLC.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "TRX_HTLC"
+      ]
     }
   }
 }
