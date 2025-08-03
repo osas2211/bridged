@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tron:compile": "tronbox compile",
+    "tron:migrate": "tronbox migrate --network nile --reset"
   },
   "dependencies": {
     "@1inch/limit-order-protocol": "^2.0.5",
@@ -48,6 +50,7 @@
     "@types/react-dom": "^19",
     "hardhat": "^2.26.1",
     "tailwindcss": "^4",
+    "tronbox": "^4.2.2",
     "ts-node": "^10.9.2",
     "typescript": "^5"
   }

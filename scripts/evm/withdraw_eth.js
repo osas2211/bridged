@@ -3,7 +3,7 @@ const fs = require("fs")
 require("dotenv").config()
 ;(async () => {
   const { swapId, preimage } = JSON.parse(fs.readFileSync("swapData.json"))
-  const provider = new ethers.providers.JsonRpcProvider(process.env.SEP_RPC)
+  const provider = new ethers.providers.JsonRpcProvider(process.env.SEPOLIA_RPC)
   const signer = new ethers.Wallet(process.env.EVM_PRIVATE_KEY, provider)
   const htlc = new ethers.Contract(
     process.env.ETH_HTLC_ADDRESS,

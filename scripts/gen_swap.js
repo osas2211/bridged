@@ -1,4 +1,3 @@
-// scripts/gen_swap.js
 const fs = require("fs")
 const { randomBytes, createHash } = require("crypto")
 

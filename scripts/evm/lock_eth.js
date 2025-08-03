@@ -1,8 +1,13 @@
 const { ethers } = require("hardhat")
 const fs = require("fs")
+const { TronWeb } = require("tronweb")
 require("dotenv").config()
 
 async function main() {
+  const receiver58 = "TYevxJu3NYMrprKMms3a5jpAH55L94rU48"
+  const tronWeb = new TronWeb({ fullHost: "https://nile.trongrid.io" })
+  const receiverHex = "0x" + tronWeb.address.toHex(receiver58).slice(2)
+  console.log("▶️ locking for Tron receiver:", receiver58, "→", receiverHex)
   const { swapId, secretHash, timelock } = JSON.parse(
     fs.readFileSync("swapData.json")
   )
@@ -15,10 +20,12 @@ async function main() {
     ],
     signer
   )
-  await token.approve(
+  const approveTx = await token.approve(
     process.env.ETH_HTLC_ADDRESS,
-    ethers.utils.parseUnits(process.env.AMOUNT, 18)
+    ethers.utils.parseUnits("100", 18)
   )
+  await approveTx.wait()
+
   const htlc = new ethers.Contract(
     process.env.ETH_HTLC_ADDRESS,
     ["function newSwap(bytes32,address,uint256,bytes32,uint256)"],
@@ -26,11 +33,13 @@ async function main() {
   )
   const tx = await htlc.newSwap(
     swapId,
-    process.env.ERC20_ADDRESS,
-    ethers.utils.parseUnits(process.env.AMOUNT, 18),
+    receiverHex,
+    ethers.utils.parseUnits("100", 18),
     secretHash,
-    timelock
+    timelock,
+    { gasLimit: 900_000 }
   )
+  await tx.wait()
   console.log("Lock ETH side tx:", tx.hash)
 }
 main()
