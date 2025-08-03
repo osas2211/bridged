@@ -30,7 +30,8 @@
     "hardhat.config.ts",
     "scripts/evm/deploy_predicate.js",
     "scripts/tron/deploy-trc20-tokens.js",
-    "scripts/evm/deploy_lop.js"
+    "scripts/evm/deploy_lop.js",
+    "scripts/evm/build_order.js"
   ],
   "exclude": ["node_modules"]
 }
