@@ -5098,6 +5098,45 @@
       "artifacts": [
         "ICreate3Deployer"
       ]
+    },
+    "/home/frank/code_base/bridged/contracts/evm/ETH_HTLC.sol": {
+      "lastModificationDate": 1754211900370,
+      "contentHash": "f2107c0cb4b591a87f986b010915ce9e",
+      "sourceName": "contracts/evm/ETH_HTLC.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "EthHTLC"
+      ]
     }
   }
 }
